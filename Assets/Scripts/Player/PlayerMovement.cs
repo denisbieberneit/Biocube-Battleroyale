@@ -38,8 +38,6 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isGased = false;
 
-    private DzMovement darkZone;
-
     public GameObject gameObjecTouchSkill;
     public GameObject gameObjecTouchAttack;
 
@@ -55,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ac = GetComponent<AnimationController>();
         touchController = GetComponent<TouchController>();
-        darkZone = GameObject.Find("DzMovement").GetComponent<DzMovement>();
     }
 
 
