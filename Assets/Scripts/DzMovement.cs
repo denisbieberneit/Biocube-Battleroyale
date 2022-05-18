@@ -14,6 +14,7 @@ public class DzMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("test");
         GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .5f);
         newPosition = new Vector2(Random.Range(-6f, 43.5f), Random.Range(-3f, 32.77f));
         newScaleNumber = 40f;
