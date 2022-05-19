@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
 
-        if (Input.GetButtonDown("Jump") && !ac.isAttacking)
+        if (Input.GetButtonDown("Jump") && !ac.isAttacking && fullGround)
         {
             OnJumpDown();
         }
