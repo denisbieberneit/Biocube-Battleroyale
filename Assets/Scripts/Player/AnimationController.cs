@@ -41,6 +41,7 @@ public class AnimationController : MonoBehaviour
     {
         if (!fullGround)
         {
+            anim.SetBool("isGround", false);
             return;
         }
         anim.SetBool("isGround", true);

@@ -38,6 +38,8 @@ public class PlayerMovement : NetworkBehaviour
 
     public bool isGased = false;
 
+    private bool isJumping = false;
+
     public GameObject gameObjecTouchSkill;
     public GameObject gameObjecTouchAttack;
 
@@ -72,6 +74,7 @@ public class PlayerMovement : NetworkBehaviour
         {
             fullGround = false;
         }
+        
 
         if (Mathf.Abs(rb.velocity.x) > 0f)
         {
@@ -88,10 +91,12 @@ public class PlayerMovement : NetworkBehaviour
             }
         }
 
-        ac.SetFullGround(fullGround);
+        if (!isJumping) { ac.SetFullGround(fullGround); }
+
 
         if (rb.velocity.y < 0 && !fullGround)
         {
+            isJumping = false;
             ac.SetFalling();
         }
  
@@ -121,21 +126,29 @@ public class PlayerMovement : NetworkBehaviour
         {
             ac.HorizontalMovement(false);
         }
-        
-        if (Input.GetButtonDown("Jump"))
-        {
-            OnJumpDown();
+
+        if (!isJumping) {
+            if (Input.GetButtonDown("Jump"))
+            {
+                OnJumpDown();
+            }
+
+            if (Input.GetButtonUp("Jump"))
+            {
+                OnJumpUp();
+            }
         }
         
-        if (Input.GetButtonUp("Jump"))
-        {
-            OnJumpUp();
-        }
-        
+
     }
 
     void FixedUpdate()
     {
+        if (!base.IsOwner)
+        {
+            return;
+        }
+
         if (holdingJump && forceStacks < maxForceStacks)
         {
             rb.AddForce(new Vector2(0f, 31f));
@@ -154,7 +167,6 @@ public class PlayerMovement : NetworkBehaviour
         {
             return;
         }
-        ac.SetJumping();
         holdingJump = false;
         forceStacks = maxForceStacks;
         forceStackSetZero = true;
@@ -166,7 +178,7 @@ public class PlayerMovement : NetworkBehaviour
         {
             return;
         }
-        Debug.Log("Jump is pressed");
+        isJumping = true;
         ac.SetJumping();
         jump = true;
         holdingJump = true;
