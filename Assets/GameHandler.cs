@@ -1,20 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FishNet.Object;
 
-public class GameHandler : MonoBehaviour
+public class GameHandler : NetworkBehaviour
 {
     [SerializeField]
-    private GameObject zone;
+    private GameObject zonePref;
 
-    private void Start()
+    private GameObject currentZone;
+
+    public override void OnStartServer()
     {
+        base.OnStartServer();
         startMatch();
+    }
+
+    public override void OnStopServer()
+    {
+        base.OnStopServer();
+        stopMatch();
     }
 
 
     void startMatch()
     {
-        zone.SetActive(true);
+        currentZone = Instantiate(zonePref);
+    }
+
+    void stopMatch()
+    {
+        Destroy(currentZone);
     }
 }

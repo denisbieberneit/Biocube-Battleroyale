@@ -1,25 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FishNet.Object;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollow : NetworkBehaviour
 {
     public float FollowSpeed = 2f;
     public float yOffset = 1f;
-    public Transform target;
 
-    private void Start()
+    public override void OnStartClient()
     {
-        GameObject.Find("MainCamera").SetActive(false);
-    }
-    // Update is called once per frame
-    void LateUpdate()
-    {
-        if (target != null)
+        base.OnStartClient();
+        if (base.IsOwner)
         {
-            Vector3 newPos = new Vector3(target.position.x, target.position.y + yOffset, -10f);
-            transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
+            gameObject.SetActive(true);
         }
-        
-    }
+    }   
 }

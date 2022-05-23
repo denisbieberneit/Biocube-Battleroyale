@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.HealthSystemCM;
 using CodeMonkey.Utils;
+using FishNet.Object;
+using FishNet.Connection;
 
 public class Player : MonoBehaviour,IGetHealthSystem
 {
@@ -26,9 +28,18 @@ public class Player : MonoBehaviour,IGetHealthSystem
         {
             if (DamageCircle.IsOutsideCircle_Static(transform.position))
             {
-                TakeDamage(1f);
+                TakeDamage(33.4f);
             }
-        },.2f);
+            else
+            {
+                GainHealth(33.4f);
+            }
+        },2f);
+    }
+
+    public void GainHealth(float health)
+    {
+        healthSystem.Heal(health);
     }
 
     public void TakeDamage(float takeDamage)
@@ -44,5 +55,18 @@ public class Player : MonoBehaviour,IGetHealthSystem
     public HealthSystem GetHealthSystem()
     {
         return healthSystem;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ability")
+        {
+            NetworkConnection aOwner = collision.gameObject.GetComponent<ItemObject>().getOwner();
+            NetworkConnection pOwner = GetComponent<NetworkObject>().Owner;
+            if (aOwner.ClientId != pOwner.ClientId)
+            {
+                Debug.Log(aOwner.ClientId + " hit " + pOwner.ClientId);
+            }
+        }
     }
 }

@@ -31,6 +31,7 @@ public class AbilitySpawner : MonoBehaviour
                     {
                         i += itemSpawnSeconds;
                         ItemObject randItem = GetRandomItem();
+                        randItem.setOwner(null);
                         spawn.item = randItem.gameObject;
                         SpawnAbility(randItem,spawn);
                     }

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FishNet.Object;
 
-public class SlopeCheck : MonoBehaviour
+public class SlopeCheck : NetworkBehaviour
 {
     [SerializeField]
     private LayerMask groundLayerMask;
@@ -27,6 +28,10 @@ public class SlopeCheck : MonoBehaviour
 
     private void Update()
     {
+        if (!base.IsOwner)
+        {
+            return;
+        }
         CheckSlope();
         CheckWall();   
     }

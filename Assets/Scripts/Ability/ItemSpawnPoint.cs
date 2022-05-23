@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using FishNet.Object;
 
 public class ItemSpawnPoint : MonoBehaviour
 {
@@ -28,8 +29,9 @@ public class ItemSpawnPoint : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player" && item != null && collider.gameObject.GetComponent<InventorySystem>().inventory == null) 
         {
-            InventoryItemData copy = item.GetComponent<ItemObject>().referenceItem;
-            copy.inInventory = true;
+            ItemObject copy = item.GetComponent<ItemObject>();
+            copy.setOwner(collider.gameObject.GetComponent<NetworkObject>().LocalConnection);
+            copy.referenceItem.inInventory = true;
             collider.gameObject.GetComponent<InventorySystem>().Add(copy);
             item = null;
             sprite.sprite = null;

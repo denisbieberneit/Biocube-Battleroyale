@@ -13,10 +13,10 @@ public class InventoryUIHandler : MonoBehaviour
             anim = GetComponent<Animator>();
     }
 
-    public void UpdateView(InventoryItemData data)
+    public void UpdateView(ItemObject data)
     {
-        current = data;
-        anim.SetBool(data.animationName, true);
+        current = data.referenceItem;
+        anim.SetBool(data.referenceItem.animationName, true);
     }
 
     public void Remove()

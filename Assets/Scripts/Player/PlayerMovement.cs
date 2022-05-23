@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FishNet.Object;
 
-
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     public bool isPlayer;
     public CharacterController2D controller;
@@ -59,34 +59,26 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!base.IsOwner)
+        {
+            return;
+        }
 
         if (slopeCheck.onGround || slopeCheck.onSlope)
-         {
-             fullGround = true;
-         }
-         else
-         {
-             fullGround = false;
-         }
-
-       
-        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            ac.SetIsAttacking(true);
+            fullGround = true;
+        }
+        else
+        {
+            fullGround = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            OnAbility();
-        }
-
-            if (!ac.isRunning)
+        if (Mathf.Abs(rb.velocity.x) > 0f)
         {
             if (slopeCheck.onSlope)
             {
                 rb.sharedMaterial = friction;
             }
-                
         }
         else
         {
@@ -96,31 +88,41 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        //controller.m_JumpForce = 600f;
+        ac.SetFullGround(fullGround);
 
+        if (rb.velocity.y < 0 && !fullGround)
+        {
+            ac.SetFalling();
+        }
+ 
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            ac.SetIsAttacking(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            OnAbility();
+        }
         
         horizontalMove = Input.GetAxisRaw("Horizontal");
         
-        if (touchController.moveLeft)
+        if (touchController.moveLeft || touchController.moveRight)
         {
-            horizontalMove = -1f;
+            ac.HorizontalMovement(true);
         }
-        if (touchController.moveRight)
+
+        if (Mathf.Abs(horizontalMove) > 0f){
+            lastMovement = horizontalMove;
+            ac.HorizontalMovement(true);
+        }
+        else
         {
-            horizontalMove = 1f;
-        }
-        //Debug.Log(horizontalMove);
-
-
-        if (horizontalMove < 0f){
-            lastMovement = horizontalMove;
-        }
-        if (horizontalMove > 0f){
-            lastMovement = horizontalMove;
+            ac.HorizontalMovement(false);
         }
         
-
-        if (Input.GetButtonDown("Jump") && !ac.isAttacking && fullGround)
+        if (Input.GetButtonDown("Jump"))
         {
             OnJumpDown();
         }
@@ -129,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         {
             OnJumpUp();
         }
+        
     }
 
     void FixedUpdate()
@@ -138,17 +141,20 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(new Vector2(0f, 31f));
             forceStacks = forceStacks + 1;
         }
-
         if (isPlayer)
         {
             controller.Move(horizontalMove * runSpeed * Time.fixedDeltaTime, false, jump);
             jump = false;
         }
-       
     }
 
     public void OnJumpUp()
     {
+        if (!base.IsOwner)
+        {
+            return;
+        }
+        ac.SetJumping();
         holdingJump = false;
         forceStacks = maxForceStacks;
         forceStackSetZero = true;
@@ -156,6 +162,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJumpDown()
     {
+        if (!base.IsOwner)
+        {
+            return;
+        }
+        Debug.Log("Jump is pressed");
+        ac.SetJumping();
         jump = true;
         holdingJump = true;
         forceStacks = 0;
@@ -164,12 +176,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnAbility()
     {
+        if (!base.IsOwner)
+        {
+            return;
+        }
         if (inventory.inventory != null)
         {
             ac.SetIsAttacking(true);
             //inventory attack
             Vector3 v = new Vector3(transform.position.x + (.6f * lastMovement), transform.position.y, transform.position.z);
-            Instantiate(inventory.inventory.prefab, v, Quaternion.identity);
+            Instantiate(inventory.inventory.referenceItem.prefab, v, Quaternion.identity);
             inventory.Remove();
         }
     }

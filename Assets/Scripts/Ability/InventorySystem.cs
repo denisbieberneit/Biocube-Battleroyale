@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {    
-    public InventoryItemData inventory;
+    public ItemObject inventory;
 
     [SerializeField]
     private InventoryUIHandler uiHandler;
@@ -15,7 +15,7 @@ public class InventorySystem : MonoBehaviour
         inventory = null;
     }
 
-    public void Add(InventoryItemData referenceData)
+    public void Add(ItemObject referenceData)
     {
         inventory = referenceData;
         uiHandler.UpdateView(referenceData);
