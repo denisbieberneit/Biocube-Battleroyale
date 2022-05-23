@@ -869,7 +869,7 @@ MonoBehaviour:
     Position: 1
     Rotation: 1
     Scale: 0
-  _interpolation: 2
+  _interpolation: 1
   _extrapolation: 0
   _enableTeleport: 0
   _teleportThreshold: 1
@@ -877,9 +877,9 @@ MonoBehaviour:
   _sendToOwner: 1
   _synchronizePosition: 1
   _positionSnapping:
-    X: 0
-    Y: 0
-    Z: 0
+    X: 1
+    Y: 1
+    Z: 1
   _synchronizeRotation: 1
   _rotationSnapping:
     X: 0

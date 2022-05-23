@@ -76,11 +76,11 @@ public class PlayerMovement : NetworkBehaviour
         }
         
 
-        if (Mathf.Abs(rb.velocity.x) > 0f)
+        if (horizontalMove == 0f)
         {
             if (slopeCheck.onSlope)
             {
-                rb.sharedMaterial = friction;
+                Invoke("SetFriction", .2f);
             }
         }
         else
@@ -204,5 +204,11 @@ public class PlayerMovement : NetworkBehaviour
             Instantiate(inventory.inventory.referenceItem.prefab, v, Quaternion.identity);
             inventory.Remove();
         }
+    }
+
+ 
+    void SetFriction()
+    {
+        rb.sharedMaterial = friction;
     }
 }
