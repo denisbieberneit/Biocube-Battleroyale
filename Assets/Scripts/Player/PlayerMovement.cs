@@ -96,10 +96,14 @@ public class PlayerMovement : NetworkBehaviour
 
         if (rb.velocity.y < 0 && !fullGround)
         {
-            isJumping = false;
             ac.SetFalling();
         }
- 
+        if (rb.velocity.y < 0 && isJumping)
+        {
+            isJumping = false;
+            forceStacks = maxForceStacks;
+        }
+
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -127,18 +131,18 @@ public class PlayerMovement : NetworkBehaviour
             ac.HorizontalMovement(false);
         }
 
-        if (!isJumping) {
+        if (!isJumping)
+        {
             if (Input.GetButtonDown("Jump"))
             {
                 OnJumpDown();
             }
-
-            if (Input.GetButtonUp("Jump"))
-            {
-                OnJumpUp();
-            }
         }
-        
+        if (Input.GetButtonUp("Jump"))
+        {
+            OnJumpUp();
+        }
+
 
     }
 
