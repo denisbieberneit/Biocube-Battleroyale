@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ability
+  - DarkZone
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - Effects
   - Deadzone
   - DeadzoneCollider2
-  - 
-  - 
+  - EnvironmentFront
+  - EnvironmentBack
   - 
   - 
   - 
@@ -43,6 +45,12 @@ TagManager:
     locked: 0
   - name: Sky
     uniqueID: 138099289
+    locked: 0
+  - name: EnvironmentBack
+    uniqueID: 1729350057
+    locked: 0
+  - name: EnvironmentFront
+    uniqueID: 1103726563
     locked: 0
   - name: Gorund
     uniqueID: 3254702613
