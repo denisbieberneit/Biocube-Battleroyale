@@ -46,6 +46,9 @@ TagManager:
   - name: Sky
     uniqueID: 138099289
     locked: 0
+  - name: NoCollideBack
+    uniqueID: 2876827819
+    locked: 0
   - name: EnvironmentBack
     uniqueID: 1729350057
     locked: 0
@@ -57,9 +60,6 @@ TagManager:
     locked: 0
   - name: SlopeGround
     uniqueID: 626682753
-    locked: 0
-  - name: NoCollideBack
-    uniqueID: 2876827819
     locked: 0
   - name: NoCollideFront
     uniqueID: 4286586461
