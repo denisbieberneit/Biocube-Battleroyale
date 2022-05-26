@@ -20,7 +20,9 @@ public class AnimationController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (spriteRenderer.sprite.name == "GroundAttackLast" || spriteRenderer.sprite.name == "AirAttackLast")
+        string animationName = spriteRenderer.sprite.name;
+        //Debug.Log(animationName);
+        if (animationName == "GroundAttackLast" || animationName == "AirAttackLast")
         {
             SetIsAttacking(false);
         }
