@@ -133,7 +133,7 @@ public class PlayerMovement : NetworkBehaviour
 
         if (!isJumping)
         {
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") && ac.isAttacking == false)
             {
                 OnJumpDown();
             }
