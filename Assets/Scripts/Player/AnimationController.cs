@@ -15,7 +15,7 @@ public class AnimationController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        anim.SetBool("isMage", true);//TODO REMOVE
+        anim.SetBool("isWarrior", true);//TODO REMOVE
     }
 
     private void FixedUpdate()
