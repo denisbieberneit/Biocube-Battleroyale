@@ -39,6 +39,7 @@ public class PlayerMovement : NetworkBehaviour
     public bool isGased = false;
 
     private bool isJumping = false;
+    private bool leftGround = false;
 
     public GameObject gameObjecTouchSkill;
     public GameObject gameObjecTouchAttack;
@@ -69,12 +70,16 @@ public class PlayerMovement : NetworkBehaviour
         if (slopeCheck.onGround || slopeCheck.onSlope)
         {
             fullGround = true;
+            if (leftGround == true) {
+                leftGround = false;
+            }
         }
         else
         {
             fullGround = false;
+            leftGround = true; //weil player beim slopes runter laufen direkt auf fall übergeht, dachte ich diese variable könnte das blockieren
         }
-        
+
 
         if (horizontalMove == 0f)
         {
