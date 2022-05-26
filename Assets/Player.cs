@@ -26,14 +26,14 @@ public class Player : MonoBehaviour,IGetHealthSystem
     {
         FunctionPeriodic.Create(() =>
         {
-            if (DamageCircle.IsOutsideCircle_Static(transform.position))
+            /*if (DamageCircle.IsOutsideCircle_Static(transform.position)) //TODO: add back
             {
                 TakeDamage(33.4f);
             }
             else
             {
                 GainHealth(33.4f);
-            }
+            }*/
         },2f);
     }
 

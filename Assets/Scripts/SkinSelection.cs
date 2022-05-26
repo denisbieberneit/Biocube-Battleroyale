@@ -10,7 +10,7 @@ public class SkinSelection : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        int selectedPlayer = PlayerPrefs.GetInt("Character");
+        int selectedPlayer = 0;//PlayerPrefs.GetInt("Character"); //TODO: add back again
         if (selectedPlayer == 1)
         {
             anim.SetBool("isMage", true);
