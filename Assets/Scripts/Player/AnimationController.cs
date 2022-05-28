@@ -24,7 +24,6 @@ public class AnimationController : MonoBehaviour
         
         if (animationName == "GroundAttackLast" || animationName == "AirAttackLast")
         {
-            Debug.Log(animationName);
             SetIsAttacking(false);
         }
     }

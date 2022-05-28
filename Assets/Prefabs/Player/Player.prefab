@@ -591,6 +591,7 @@ GameObject:
   - component: {fileID: 9124503578055572127}
   - component: {fileID: 2526658513653068422}
   - component: {fileID: 4003156382236879165}
+  - component: {fileID: 5354588422455722465}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -605,7 +606,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4820428619373347916}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.49, y: -4.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -830,7 +831,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12792587, y: -0.03807354}
+  m_Offset: {x: 0, y: -0.03807354}
   m_Size: {x: 0.45508766, y: 0.80351067}
   m_Direction: 0
 --- !u!114 &4820428619373348017
@@ -963,7 +964,7 @@ MonoBehaviour:
   - {fileID: 9007098436967535757}
   SceneTransformProperties:
     Position: {x: 13.49, y: -4.55, z: 0}
-    Rotation: {x: -0, y: -0, z: -0, w: 1}
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
     LocalScale: {x: 1, y: 1, z: 1}
   _isNetworked: 1
   _hasParentNetworkObjectAtEdit: 0
@@ -971,7 +972,9 @@ MonoBehaviour:
   _prefabId: 4
   _scenePathHash: 0
   _sceneId: 0
-  _sceneNetworkObjects: []
+  _sceneNetworkObjects:
+  - {fileID: 2526658513653068422}
+  - {fileID: 0}
 --- !u!114 &4003156382236879165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,6 +996,31 @@ MonoBehaviour:
   _synchronizeInterval: 0.1
   _clientAuthoritative: 1
   _sendToOwner: 0
+--- !u!114 &5354588422455722465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4820428619373347916}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b6587ef65000b46aba71a983077579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 0.22
+  groundCheckRadius: 0.38
+  jumpForce: 30
+  slopeCheckDistance: 0.5
+  maxSlopeAngle: 45
+  groundCheck: {fileID: 4820428619544634686}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  noFriction: {fileID: 6200000, guid: e3187ae8e916c374aa5d8440c040baa4, type: 2}
+  fullFriction: {fileID: 6200000, guid: e81672d0bd155e846b4ab890bbcac2cc, type: 2}
+  rb: {fileID: 4820428619373347912}
+  cc: {fileID: 4820428619373348019}
 --- !u!1 &4820428619377946144
 GameObject:
   m_ObjectHideFlags: 0

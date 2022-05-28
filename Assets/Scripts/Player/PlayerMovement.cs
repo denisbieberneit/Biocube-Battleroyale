@@ -70,7 +70,8 @@ public class PlayerMovement : NetworkBehaviour
         if (slopeCheck.onGround || slopeCheck.onSlope)
         {
             fullGround = true;
-            if (leftGround == true) {
+            if (leftGround == true)
+            {
                 leftGround = false;
             }
         }
@@ -102,9 +103,6 @@ public class PlayerMovement : NetworkBehaviour
         if (rb.velocity.y < 0 && !fullGround)
         {
             ac.SetFalling();
-        }
-        if (rb.velocity.y < 0 && isJumping)
-        {
             isJumping = false;
             forceStacks = maxForceStacks;
         }
@@ -119,15 +117,16 @@ public class PlayerMovement : NetworkBehaviour
         {
             OnAbility();
         }
-        
+
         horizontalMove = Input.GetAxisRaw("Horizontal");
-        
+
         if (touchController.moveLeft || touchController.moveRight)
         {
             ac.HorizontalMovement(true);
         }
 
-        if (Mathf.Abs(horizontalMove) > 0f){
+        if (Mathf.Abs(horizontalMove) > 0f)
+        {
             lastMovement = horizontalMove;
             ac.HorizontalMovement(true);
         }
@@ -160,6 +159,7 @@ public class PlayerMovement : NetworkBehaviour
 
         if (holdingJump && forceStacks < maxForceStacks)
         {
+            Debug.Log("holding");
             rb.AddForce(new Vector2(0f, 31f));
             forceStacks = forceStacks + 1;
         }
@@ -211,7 +211,7 @@ public class PlayerMovement : NetworkBehaviour
         }
     }
 
- 
+
     void SetFriction()
     {
         rb.sharedMaterial = friction;
