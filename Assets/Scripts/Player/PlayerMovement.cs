@@ -64,12 +64,15 @@ public class PlayerMovement : NetworkBehaviour
     {
         if (!base.IsOwner)
         {
+            //rb.gravityScale = 0; //TODO: ruckelt mit gravity
             return;
         }
 
         if (slopeCheck.onGround || slopeCheck.onSlope)
         {
             fullGround = true;
+            ac.SetFullGround(fullGround);
+            isJumping = false;
             if (leftGround == true)
             {
                 leftGround = false;
@@ -78,6 +81,7 @@ public class PlayerMovement : NetworkBehaviour
         else
         {
             fullGround = false;
+            ac.SetFullGround(fullGround);
             leftGround = true; //weil player beim slopes runter laufen direkt auf fall übergeht, dachte ich diese variable könnte das blockieren
         }
 
@@ -97,7 +101,7 @@ public class PlayerMovement : NetworkBehaviour
             }
         }
 
-        if (!isJumping) { ac.SetFullGround(fullGround); }
+        //if (!isJumping) { ac.SetFullGround(fullGround);}
 
 
         if (rb.velocity.y < 0 && !fullGround)
@@ -152,6 +156,13 @@ public class PlayerMovement : NetworkBehaviour
 
     void FixedUpdate()
     {
+        if (leftGround)
+        {
+            ac.SetJumping();
+            isJumping = true;
+            leftGround = false;
+        }
+
         if (!base.IsOwner)
         {
             return;
@@ -187,8 +198,6 @@ public class PlayerMovement : NetworkBehaviour
         {
             return;
         }
-        isJumping = true;
-        ac.SetJumping();
         jump = true;
         holdingJump = true;
         forceStacks = 0;
@@ -204,9 +213,11 @@ public class PlayerMovement : NetworkBehaviour
         if (inventory.inventory != null)
         {
             ac.SetIsAttacking(true);
-            //inventory attack
+            //inventory attack, TODO network instantiate
             Vector3 v = new Vector3(transform.position.x + (.6f * lastMovement), transform.position.y, transform.position.z);
-            Instantiate(inventory.inventory.referenceItem.prefab, v, Quaternion.identity);
+            GameObject ability = inventory.inventory.referenceItem.prefab;
+           
+            Instantiate(ability, v, Quaternion.identity);
             inventory.Remove();
         }
     }

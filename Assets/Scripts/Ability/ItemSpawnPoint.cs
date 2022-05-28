@@ -31,6 +31,7 @@ public class ItemSpawnPoint : MonoBehaviour
         {
             ItemObject copy = item.GetComponent<ItemObject>();
             copy.setOwner(collider.gameObject.GetComponent<NetworkObject>().LocalConnection);
+            Debug.Log("ClientId of owner: "+  collider.gameObject.GetComponent<NetworkObject>().LocalConnection.ClientId);
             copy.referenceItem.inInventory = true;
             collider.gameObject.GetComponent<InventorySystem>().Add(copy);
             item = null;

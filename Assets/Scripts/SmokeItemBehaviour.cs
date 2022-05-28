@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FishNet.Object;
 
-public class SmokeItemBehaviour : Ability
+public class SmokeItemBehaviour : NetworkBehaviour
 {
     private Animator anim;
-
     private Rigidbody2D rb;
-
     private float lastMovement;
 
     private void Start()
@@ -20,19 +19,18 @@ public class SmokeItemBehaviour : Ability
     void FixedUpdate()
     {
         anim.SetBool("CircleGas",true);
-        rb.AddForce(new Vector2(10f*lastMovement, 0));
+        rb.AddForce(new Vector2(7f*lastMovement, 0));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Player")
-            {
+        if (collision.gameObject.tag == "Player")
+        {
             Debug.Log("Collided with " + collision.gameObject.tag);
+            rb.simulated = false;
             anim.SetBool("CircleGas", true);
             anim.SetBool("CircleGasExplosion", true);
-        
             rb.bodyType = RigidbodyType2D.Static;   
-            //Gets destroyed by behaviour in animator
         }
     }
 }
