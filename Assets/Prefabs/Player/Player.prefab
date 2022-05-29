@@ -942,6 +942,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e980d275e7990a040be537f7c9a7c6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _componentIndexCache: 3
+  _addedNetworkObject: {fileID: 2526658513653068422}
+  _networkObjectCache: {fileID: 2526658513653068422}
   baseHealth: 100
 --- !u!114 &2526658513653068422
 MonoBehaviour:
@@ -959,6 +962,7 @@ MonoBehaviour:
   - {fileID: 4820428619373348020}
   - {fileID: 8340473537817153801}
   - {fileID: 9026042514008476616}
+  - {fileID: 9124503578055572127}
   - {fileID: 4003156382236879165}
   - {fileID: 9007098436967535757}
   SceneTransformProperties:
@@ -986,7 +990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cac635f24954048aad3a6ff9110beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 3
+  _componentIndexCache: 4
   _addedNetworkObject: {fileID: 2526658513653068422}
   _networkObjectCache: {fileID: 2526658513653068422}
   IgnoredParameters: []
@@ -1402,7 +1406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624257307a35b9445ae2961298345f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 4
+  _componentIndexCache: 5
   _addedNetworkObject: {fileID: 2526658513653068422}
   _networkObjectCache: {fileID: 2526658513653068422}
   interpVelocity: 0

@@ -6,7 +6,7 @@ using CodeMonkey.Utils;
 using FishNet.Object;
 using FishNet.Connection;
 
-public class Player : MonoBehaviour,IGetHealthSystem
+public class Player : NetworkBehaviour,IGetHealthSystem
 {
 
     private HealthSystem healthSystem;
@@ -17,6 +17,10 @@ public class Player : MonoBehaviour,IGetHealthSystem
     // Start is called before the first frame update
     void Awake()
     {
+        if (!base.IsClient)
+        {
+            return;
+        }
         healthSystem = new HealthSystem(baseHealth);
 
         healthSystem.OnDead += HealthSystem_OnDead;
@@ -24,6 +28,10 @@ public class Player : MonoBehaviour,IGetHealthSystem
 
     private void Start()
     {
+        if (!base.IsClient)
+        {
+            return;
+        }
         FunctionPeriodic.Create(() =>
         {
             /*if (DamageCircle.IsOutsideCircle_Static(transform.position)) //TODO: add back
@@ -39,26 +47,43 @@ public class Player : MonoBehaviour,IGetHealthSystem
 
     public void GainHealth(float health)
     {
+        if (!base.IsClient)
+        {
+            return;
+        }
         healthSystem.Heal(health);
     }
 
     public void TakeDamage(float takeDamage)
     {
+        if (!base.IsClient)
+        {
+            return;
+        }
         healthSystem.Damage(takeDamage);
     }
 
     private void HealthSystem_OnDead(object sender, System.EventArgs e)
     {
+        if (!base.IsClient)
+        {
+            return;
+        }
         Destroy(gameObject);
     }
 
     public HealthSystem GetHealthSystem()
     {
+        if (!base.IsClient)
+        {
+            return null;
+        }
         return healthSystem;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         if (collision.gameObject.tag == "Ability")
         {
             NetworkConnection aOwner = collision.gameObject.GetComponent<ItemObject>().getOwner();
