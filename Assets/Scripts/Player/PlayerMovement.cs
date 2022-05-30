@@ -214,10 +214,9 @@ public class PlayerMovement : NetworkBehaviour
         if (inventory.inventory != null)
         {
             ac.SetIsAttacking(true);
-            //inventory attack, TODO network instantiate
+            //inventory attack,
             Vector3 v = new Vector3(transform.position.x + (.6f * lastMovement), transform.position.y, transform.position.z);
             GameObject ability = inventory.inventory.referenceItem.prefab;
-           
             GameObject obj = Instantiate(ability, v, Quaternion.identity);
             InstanceFinder.ServerManager.Spawn(obj, inventory.inventory.getOwner());
 

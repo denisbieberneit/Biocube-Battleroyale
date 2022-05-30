@@ -50959,8 +50959,7 @@ MonoBehaviour:
   _prefabId: -1
   _scenePathHash: 394288251
   _sceneId: 1693455147481305784
-  _sceneNetworkObjects:
-  - {fileID: 1683915220}
+  _sceneNetworkObjects: []
 --- !u!1001 &84321474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68557,8 +68556,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1683915218}
   - component: {fileID: 1683915217}
-  - component: {fileID: 1683915219}
-  - component: {fileID: 1683915220}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -68601,58 +68598,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1683915219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683915216}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc752806252ccab41928ec95b6cdd471, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _componentIndexCache: 0
-  _addedNetworkObject: {fileID: 1683915220}
-  _networkObjectCache: {fileID: 1683915220}
-  groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
-  slopeLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  rayCastOrigin: {fileID: 0}
-  characterController: {fileID: 0}
-  onSlope: 0
-  atWall: 0
-  onGround: 0
---- !u!114 &1683915220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683915216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _networkBehaviours:
-  - {fileID: 1683915219}
-  SceneTransformProperties:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 1}
-    LocalScale: {x: 1, y: 1, z: 1}
-  _isNetworked: 1
-  _hasParentNetworkObjectAtEdit: 0
-  NetworkObserver: {fileID: 0}
-  _prefabId: -1
-  _scenePathHash: 394288251
-  _sceneId: 1693455144223056505
-  _sceneNetworkObjects:
-  - {fileID: 1683915220}
 --- !u!1 &1687691194
 GameObject:
   m_ObjectHideFlags: 0
@@ -71792,6 +71737,8 @@ MonoBehaviour:
   - {fileID: 770030071}
   - {fileID: 1822320569}
   spawnItems:
+  - {fileID: 2930427727501858023, guid: 0ea0805afc53cb944aa8007c66e0f0bf, type: 3}
+  - {fileID: 2930427727501858023, guid: 70649d5b99e48b540b8718effbca227d, type: 3}
   - {fileID: 2930427727501858023, guid: 45b65c3651431004ca2f21ae7478edce, type: 3}
   itemSpawnSeconds: 10
   anim: {fileID: 0}

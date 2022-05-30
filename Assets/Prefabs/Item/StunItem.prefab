@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 249047828962651356}
   - component: {fileID: 249047828962651357}
   - component: {fileID: -5619124536314918133}
-  - component: {fileID: 885065571733020904}
   - component: {fileID: 4469972187463437601}
   - component: {fileID: 6788768176670356733}
   - component: {fileID: 5330375076387988261}
+  - component: {fileID: 1387123686462247249}
   m_Layer: 0
-  m_Name: SmokeItem
+  m_Name: StunItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ SpriteRenderer:
   m_SortingLayerID: -1652819569
   m_SortingLayer: 15
   m_SortingOrder: 0
-  m_Sprite: {fileID: -892909059, guid: ac1df798b898e324f8dc259fdee0fa1a, type: 3}
+  m_Sprite: {fileID: 1337307130, guid: e3ee727e268007b4686475137619aebe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,21 +109,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &885065571733020904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249047828962651358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22e9ce44d69f9fb4087f0b72bcc25162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _componentIndexCache: 0
-  _addedNetworkObject: {fileID: 5330375076387988261}
-  _networkObjectCache: {fileID: 5330375076387988261}
 --- !u!50 &4469972187463437601
 Rigidbody2D:
   serializedVersion: 4
@@ -174,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _networkBehaviours:
-  - {fileID: 885065571733020904}
+  - {fileID: 0}
   SceneTransformProperties:
     Position: {x: 21.976885, y: -2.1481397, z: -0.055296946}
     Rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -186,3 +171,15 @@ MonoBehaviour:
   _scenePathHash: 0
   _sceneId: 0
   _sceneNetworkObjects: []
+--- !u!114 &1387123686462247249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249047828962651358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1056020dd5e742545af04d66d6d40299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
