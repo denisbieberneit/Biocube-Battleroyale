@@ -397,7 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2165332372742903060}
   - component: {fileID: 5835456043661429308}
-  - component: {fileID: 5902163235787386844}
+  - component: {fileID: 4918373393052109736}
   m_Layer: 6
   m_Name: HitDetection
   m_TagString: Attack
@@ -432,22 +432,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9537bcd5bff3646b87d7ece370a6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!70 &5902163235787386844
-CapsuleCollider2D:
+--- !u!61 &4918373393052109736
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3210010822983724616}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.25865984, y: 0.005445242}
-  m_Size: {x: 0.2477541, y: 0.6436286}
-  m_Direction: 0
+  m_Offset: {x: 0.57732105, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.90867233, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &3884100090418709481
 GameObject:
   m_ObjectHideFlags: 0

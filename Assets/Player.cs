@@ -93,19 +93,4 @@ public class Player : NetworkBehaviour,IGetHealthSystem
             }
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Attack")
-        {
-            NetworkConnection owner = GetComponent<NetworkObject>().Owner;
-            NetworkConnection targetOwner = collision.gameObject.GetComponent<NetworkObject>().Owner;
-            Debug.Log(owner.ClientId + ":" + targetOwner.ClientId);
-            if (owner.ClientId != targetOwner.ClientId)
-            {
-                Debug.Log("Hitted " + targetOwner.ClientId);
-            }
-
-        }
-    }
 }

@@ -186,7 +186,6 @@ public class PlayerMovement : NetworkBehaviour
 
         if (holdingJump && forceStacks < maxForceStacks)
         {
-            Debug.Log("holding");
             rb.AddForce(new Vector2(0f, 31f));
             forceStacks = forceStacks + 1;
         }
