@@ -387,6 +387,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSkill: 0
   isAttack: 1
+--- !u!1 &3210010822983724616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2165332372742903060}
+  - component: {fileID: 5835456043661429308}
+  - component: {fileID: 5902163235787386844}
+  m_Layer: 6
+  m_Name: HitDetection
+  m_TagString: Attack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2165332372742903060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3210010822983724616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4820428619373347914}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5835456043661429308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3210010822983724616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9537bcd5bff3646b87d7ece370a6d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &5902163235787386844
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3210010822983724616}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.25865984, y: 0.005445242}
+  m_Size: {x: 0.2477541, y: 0.6436286}
+  m_Direction: 0
 --- !u!1 &3884100090418709481
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +672,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5449338993089969771}
+  - {fileID: 2165332372742903060}
   - {fileID: 4820428619377946159}
   - {fileID: 4820428619544634686}
   - {fileID: 4820428620061792698}
@@ -763,6 +825,7 @@ MonoBehaviour:
   isGased: 0
   gameObjecTouchSkill: {fileID: 0}
   gameObjecTouchAttack: {fileID: 0}
+  attackController: {fileID: 5835456043661429308}
 --- !u!50 &4820428619373347912
 Rigidbody2D:
   serializedVersion: 4

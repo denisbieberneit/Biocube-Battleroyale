@@ -83,7 +83,6 @@ public class Player : NetworkBehaviour,IGetHealthSystem
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         if (collision.gameObject.tag == "Ability")
         {
             NetworkConnection aOwner = collision.gameObject.GetComponent<ItemObject>().getOwner();
@@ -92,6 +91,21 @@ public class Player : NetworkBehaviour,IGetHealthSystem
             {
                 Debug.Log(aOwner.ClientId + " hit " + pOwner.ClientId);
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Attack")
+        {
+            NetworkConnection owner = GetComponent<NetworkObject>().Owner;
+            NetworkConnection targetOwner = collision.gameObject.GetComponent<NetworkObject>().Owner;
+            Debug.Log(owner.ClientId + ":" + targetOwner.ClientId);
+            if (owner.ClientId != targetOwner.ClientId)
+            {
+                Debug.Log("Hitted " + targetOwner.ClientId);
+            }
+
         }
     }
 }

@@ -47,6 +47,9 @@ public class PlayerMovement : NetworkBehaviour
 
     private InventorySystem inventory;
 
+    [SerializeField]
+    private PlayerAttackController attackController;
+
     private void Start()
     {
         gameObjecTouchSkill = GameObject.Find("MobileSkill");
@@ -152,7 +155,19 @@ public class PlayerMovement : NetworkBehaviour
             OnJumpUp();
         }
 
+        checkHit();
+    }
 
+    private void checkHit()
+    {
+        if(ac.isAttacking)
+        {
+            attackController.OnStartHit();
+        }
+        else
+        {
+            attackController.OnEndHit();
+        }
     }
 
     void FixedUpdate()
