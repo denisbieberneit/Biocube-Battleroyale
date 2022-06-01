@@ -31,6 +31,7 @@ public class StunItemBehaviour : NetworkBehaviour
             anim.SetBool("CircleStun", true);
             anim.SetBool("CircleStunExplosion", true);
             rb.bodyType = RigidbodyType2D.Static;
+            collision.gameObject.GetComponent<Player>().StunPlayer();
         }
     }
 }

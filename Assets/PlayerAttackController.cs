@@ -11,8 +11,6 @@ public class PlayerAttackController : NetworkBehaviour
     [SerializeField]
     private PlayerMovement playerMovement;
     
-
-
     private void Start()
     {
         col = GetComponent<Collider2D>();
@@ -34,10 +32,11 @@ public class PlayerAttackController : NetworkBehaviour
         {
             NetworkConnection owner = playerMovement.GetComponent<NetworkObject>().Owner;
             NetworkConnection targetOwner = collision.gameObject.GetComponent<NetworkObject>().Owner;
-            //Debug.Log(owner.ClientId + ":" + targetOwner.ClientId);
+            Debug.Log(owner.ClientId + ":" + targetOwner.ClientId);
             if (owner.ClientId != targetOwner.ClientId)
             {
                 playerMovement.ServerHitback(collision.gameObject, playerMovement.GetComponent<PlayerMovement>().lastMovement);
+                playerMovement.ac.isAttacking = false;
             }
         }
         

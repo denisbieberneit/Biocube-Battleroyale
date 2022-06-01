@@ -832,6 +832,7 @@ MonoBehaviour:
   noFriction: {fileID: 6200000, guid: e3187ae8e916c374aa5d8440c040baa4, type: 2}
   friction: {fileID: 6200000, guid: e81672d0bd155e846b4ab890bbcac2cc, type: 2}
   rb: {fileID: 4820428619373347912}
+  ac: {fileID: 0}
   fullGround: 0
   touchController: {fileID: 4820428619373348017}
   forceStackSetZero: 0
@@ -1022,7 +1023,7 @@ MonoBehaviour:
   _componentIndexCache: 3
   _addedNetworkObject: {fileID: 2526658513653068422}
   _networkObjectCache: {fileID: 2526658513653068422}
-  baseHealth: 100
+  baseHealth: 10
 --- !u!114 &2526658513653068422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1608,6 +1609,10 @@ PrefabInstance:
       propertyPath: getHealthSystemGameObject
       value: 
       objectReference: {fileID: 4820428619373347916}
+    - target: {fileID: 6848739073536652053, guid: f1419c2a3f5ecf44e824039f908fea60, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6848739074368699834, guid: f1419c2a3f5ecf44e824039f908fea60, type: 3}
       propertyPath: m_Name
       value: pfHealthBarUIWorldCanvas

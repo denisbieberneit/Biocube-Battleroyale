@@ -25,7 +25,7 @@ public class PlayerMovement : NetworkBehaviour
 
     public Rigidbody2D rb;
 
-    private AnimationController ac;
+    public AnimationController ac;
 
     public bool fullGround = false;
 
@@ -100,10 +100,10 @@ public class PlayerMovement : NetworkBehaviour
         }
         else
         {
-            if (!isStunned)
-            {
+            if (!isStunned) {
                 rb.sharedMaterial = noFriction;
             }
+          
         }
 
         //if (!isJumping) { ac.SetFullGround(fullGround);}
@@ -138,6 +138,7 @@ public class PlayerMovement : NetworkBehaviour
         {
             lastMovement = horizontalMove;
             ac.HorizontalMovement(true);
+
         }
         else
         {
@@ -245,6 +246,19 @@ public class PlayerMovement : NetworkBehaviour
         rb.sharedMaterial = friction;
     }
 
+    public void SetStun()
+    {
+        //mach stun
+        SetFriction();
+        Invoke("RemoveStun", .2f);
+
+    }
+
+    public void RemoveStun()
+    {
+        rb.sharedMaterial = noFriction;
+    }
+
 
     [ServerRpc]
     public void ServerHitback(GameObject target, float direction)
@@ -255,6 +269,7 @@ public class PlayerMovement : NetworkBehaviour
     [ObserversRpc]
     private void ObserversHitback(GameObject target, float direction)
     {
-            target.GetComponent<Rigidbody2D>().AddForce(new Vector2(600f * direction, 600f));
+        target.GetComponent<Rigidbody2D>().AddForce(new Vector2(600f * direction, 600f));
+        target.GetComponent<Player>().TakeDamage(1f);
     }
 }

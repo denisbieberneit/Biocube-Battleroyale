@@ -11,20 +11,10 @@ public class Player : NetworkBehaviour,IGetHealthSystem
 
     private HealthSystem healthSystem;
 
+    private PlayerMovement pm;
+
     [SerializeField]
     private float baseHealth;
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-        if (!base.IsClient)
-        {
-            return;
-        }
-        healthSystem = new HealthSystem(baseHealth);
-
-        healthSystem.OnDead += HealthSystem_OnDead;
-    }
 
     private void Start()
     {
@@ -36,11 +26,11 @@ public class Player : NetworkBehaviour,IGetHealthSystem
         {
             /*if (DamageCircle.IsOutsideCircle_Static(transform.position)) //TODO: add back
             {
-                TakeDamage(33.4f);
+                TakeDamage(1f);
             }
             else
             {
-                GainHealth(33.4f);
+                GainHealth(1f);
             }*/
         },2f);
     }
@@ -51,14 +41,40 @@ public class Player : NetworkBehaviour,IGetHealthSystem
         {
             return;
         }
+        if (healthSystem == null)
+        {
+            healthSystem = new HealthSystem(baseHealth);
+            healthSystem.OnDead += HealthSystem_OnDead;
+        }
         healthSystem.Heal(health);
     }
+
+
+    public void StunPlayer()
+    {
+        if (pm == null)
+        {
+            GetPlayerMovement();
+        }
+        pm.SetStun();
+    }
+
+    private void GetPlayerMovement()
+    {
+        pm = GetComponent<PlayerMovement>();
+    }
+
 
     public void TakeDamage(float takeDamage)
     {
         if (!base.IsClient)
         {
             return;
+        }
+        if (healthSystem == null)
+        {
+            healthSystem = new HealthSystem(baseHealth);
+            healthSystem.OnDead += HealthSystem_OnDead;
         }
         healthSystem.Damage(takeDamage);
     }
@@ -69,6 +85,7 @@ public class Player : NetworkBehaviour,IGetHealthSystem
         {
             return;
         }
+ 
         Destroy(gameObject);
     }
 
@@ -77,6 +94,11 @@ public class Player : NetworkBehaviour,IGetHealthSystem
         if (!base.IsClient)
         {
             return null;
+        }
+        if (healthSystem == null)
+        {
+            healthSystem = new HealthSystem(baseHealth);
+            healthSystem.OnDead += HealthSystem_OnDead;
         }
         return healthSystem;
     }

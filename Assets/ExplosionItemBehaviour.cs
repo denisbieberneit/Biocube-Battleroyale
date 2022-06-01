@@ -30,6 +30,7 @@ public class ExplosionItemBehaviour : MonoBehaviour
             anim.SetBool("CircleExplosion", true);
             anim.SetBool("CircleExplosionExplosion", true);
             rb.bodyType = RigidbodyType2D.Static;
+            collision.gameObject.GetComponent<Player>().TakeDamage(3f);
         }
     }
 }
