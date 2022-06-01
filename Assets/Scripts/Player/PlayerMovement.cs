@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FishNet.Object;
 using FishNet;
+using FishNet.Connection;
 
 public class PlayerMovement : NetworkBehaviour
 {
@@ -160,7 +161,7 @@ public class PlayerMovement : NetworkBehaviour
 
     private void checkHit()
     {
-        if(ac.isAttacking)
+        if (ac.isAttacking)
         {
             attackController.OnStartHit();
         }
@@ -242,5 +243,18 @@ public class PlayerMovement : NetworkBehaviour
     void SetFriction()
     {
         rb.sharedMaterial = friction;
+    }
+
+
+    [ServerRpc]
+    public void ServerHitback(GameObject target, float direction)
+    {
+        ObserversHitback(target, direction);
+    }
+
+    [ObserversRpc]
+    private void ObserversHitback(GameObject target, float direction)
+    {
+            target.GetComponent<Rigidbody2D>().AddForce(new Vector2(600f * direction, 600f));
     }
 }

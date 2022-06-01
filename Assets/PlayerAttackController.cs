@@ -1,10 +1,17 @@
+using FishNet.Connection;
+using FishNet.Object;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackController : MonoBehaviour
+public class PlayerAttackController : NetworkBehaviour
 {
     private Collider2D col;
+
+    [SerializeField]
+    private PlayerMovement playerMovement;
+    
+
 
     private void Start()
     {
@@ -25,14 +32,13 @@ public class PlayerAttackController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && col.enabled == true)
         {
-            Debug.Log(collision.gameObject.tag);
-            /*NetworkConnection owner = GetComponent<NetworkObject>().Owner;
+            NetworkConnection owner = playerMovement.GetComponent<NetworkObject>().Owner;
             NetworkConnection targetOwner = collision.gameObject.GetComponent<NetworkObject>().Owner;
-            Debug.Log(owner.ClientId + ":" + targetOwner.ClientId);
+            //Debug.Log(owner.ClientId + ":" + targetOwner.ClientId);
             if (owner.ClientId != targetOwner.ClientId)
             {
-                Debug.Log("Hitted " + targetOwner.ClientId);
-            }*/
+                playerMovement.ServerHitback(collision.gameObject, playerMovement.GetComponent<PlayerMovement>().lastMovement);
+            }
         }
         
     }
