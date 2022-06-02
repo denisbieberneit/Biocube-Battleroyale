@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4007534014146569609}
   - component: {fileID: 2930427727501858023}
   m_Layer: 9
-  m_Name: ExplosionPickup
+  m_Name: CircleExplosion
   m_TagString: Ability
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -31,7 +31,7 @@ public class AbilitySpawner : NetworkBehaviour
                         ItemObject randItem = GetRandomItem();
                         randItem.setOwner(null);
                         spawn.item = randItem.gameObject;
-                        SpawnAbility(randItem,spawn);
+                        SpawnAbility(randItem, spawn);
                     }
                 }
                 i += itemSpawnSeconds;

@@ -41,20 +41,23 @@ public class ItemSpawnPoint : NetworkBehaviour
     }
 
 
-       [ServerRpc]
+    //[ServerRpc]
     public void ServerSetAnim(string animationName)
     {
+        //Debug.Log(animationName);
         ObserversSetAnim(animationName);
     }
 
-    [ObserversRpc]
+    //[ObserversRpc]
     private void ObserversSetAnim(string animationName)
     {
+        
         foreach (AnimatorControllerParameter parameter in anim.parameters)
         {
             anim.SetBool(parameter.name, false);
         }
         anim.enabled = true;
+        //Debug.Log(animationName);
         anim.SetBool(animationName, true);
     }
 }

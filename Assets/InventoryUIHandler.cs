@@ -12,8 +12,7 @@ public class InventoryUIHandler : NetworkBehaviour
 
     private void Start()
     {
-
-            anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     public void UpdateView(ItemObject data)
