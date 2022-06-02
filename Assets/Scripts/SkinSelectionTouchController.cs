@@ -47,7 +47,7 @@ public class SkinSelectionTouchController : MonoBehaviour
 
                 if (pos.x < 0.2f && pos.x > -0.2f)
                 {
-                    skinSelectionController.StartGame();
+                    //skinSelectionController.StartGame();
                 }
             }
         }

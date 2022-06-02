@@ -2,22 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SkinSelectionController : MonoBehaviour
 {
+    [SerializeField]
     private Animator anim;
 
     private string characterKey = "Character";
     private int selectedCharacter;
+
+    [SerializeField]
+    private SpriteRenderer sr;
+
+    [SerializeField]
+    private Image img;
+
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
-        selectedCharacter = 1;
+        selectedCharacter = PlayerPrefs.GetInt(characterKey, 1);
         ShowSkinBasedOnSelection();
         //SelectHero();
     }
-   
+
+    private void FixedUpdate()
+    {
+        img.sprite = sr.sprite;
+    }
 
     public void NextHero(){
         selectedCharacter = selectedCharacter + 1;
@@ -38,11 +50,14 @@ public class SkinSelectionController : MonoBehaviour
     }
 
     private void ShowSkinBasedOnSelection(){
-        
-        ResetAllSkins();
+        anim.SetBool("isMage", false);
+        anim.SetBool("isEvilMage", false);
+        anim.SetBool("isHuntress", false);
+
         if (selectedCharacter == 1)
         {
             anim.SetBool("isMage", true);
+            img.transform.localScale = new Vector3(5f, 5f, 0f);
         }
         if (selectedCharacter == 2)
         {
@@ -53,15 +68,8 @@ public class SkinSelectionController : MonoBehaviour
             anim.SetBool("isHuntress", true);
         }
     }
-    private void ResetAllSkins()
-    {
-        anim.SetBool("isMage", false);
-        anim.SetBool("isEvilMage", false);
-        anim.SetBool("isHuntress", false);
-    }
 
-    public void StartGame(){
+    public void SelectSkin(){
         PlayerPrefs.SetInt(characterKey, selectedCharacter);
-        SceneManager.LoadScene("Main");
     }
 }
