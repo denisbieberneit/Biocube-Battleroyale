@@ -26,6 +26,12 @@ public class SkinSelectionController : MonoBehaviour
         //SelectHero();
     }
 
+    private void OnEnable()
+    {
+        selectedCharacter = PlayerPrefs.GetInt(characterKey, 1);
+        ShowSkinBasedOnSelection();
+    }
+
     private void FixedUpdate()
     {
         img.sprite = sr.sprite;
@@ -54,18 +60,22 @@ public class SkinSelectionController : MonoBehaviour
         anim.SetBool("isEvilMage", false);
         anim.SetBool("isHuntress", false);
 
+      
         if (selectedCharacter == 1)
         {
             anim.SetBool("isMage", true);
-            img.transform.localScale = new Vector3(5f, 5f, 0f);
+            img.transform.localScale = new Vector3(4f, 4f, 0f);
         }
         if (selectedCharacter == 2)
         {
             anim.SetBool("isEvilMage", true);
+            img.transform.localScale = new Vector3(6f, 6f, 0f);
         }
         if (selectedCharacter == 3)
         {
+            
             anim.SetBool("isHuntress", true);
+            img.transform.localScale = new Vector3(6f, 6f, 0f);
         }
     }
 

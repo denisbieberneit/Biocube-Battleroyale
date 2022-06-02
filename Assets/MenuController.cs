@@ -16,7 +16,7 @@ public class MenuController : MonoBehaviour
         characterSelection.SetActive(true);
     }
 
-    public void SelectHeroAndOpenMenu()
+    public void OpenMenu()
     {
         characterSelection.SetActive(false);
         menu.SetActive(true);

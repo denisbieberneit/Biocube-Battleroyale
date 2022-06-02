@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using FishNet.Object;
 
-public class ItemSpawnPoint : MonoBehaviour
+public class ItemSpawnPoint : NetworkBehaviour
 {
     public Transform spawnPoint;
 
@@ -38,5 +38,23 @@ public class ItemSpawnPoint : MonoBehaviour
             sprite.sprite = null;
             anim.enabled = false;
         }
+    }
+
+
+       [ServerRpc]
+    public void ServerSetAnim(string animationName)
+    {
+        ObserversSetAnim(animationName);
+    }
+
+    [ObserversRpc]
+    private void ObserversSetAnim(string animationName)
+    {
+        foreach (AnimatorControllerParameter parameter in anim.parameters)
+        {
+            anim.SetBool(parameter.name, false);
+        }
+        anim.enabled = true;
+        anim.SetBool(animationName, true);
     }
 }

@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FishNet.Object;
 
-public class InventoryUIHandler : MonoBehaviour
+
+public class InventoryUIHandler : NetworkBehaviour
 {
     private Animator anim;
 
@@ -10,6 +12,7 @@ public class InventoryUIHandler : MonoBehaviour
 
     private void Start()
     {
+
             anim = GetComponent<Animator>();
     }
 

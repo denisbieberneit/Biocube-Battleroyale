@@ -1,8 +1,9 @@
+using FishNet.Object;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilitySpawner : MonoBehaviour
+public class AbilitySpawner : NetworkBehaviour
 {
     [SerializeField]
     private List<ItemSpawnPoint> spawnPoints;
@@ -13,9 +14,6 @@ public class AbilitySpawner : MonoBehaviour
     [SerializeField]
     private int itemSpawnSeconds;
 
-    [HideInInspector]
-    public Animator anim;
-
 
     int i = 0;
 
@@ -23,19 +21,20 @@ public class AbilitySpawner : MonoBehaviour
     {
         if (spawnItems != null)
         {
-            foreach (ItemSpawnPoint spawn in spawnPoints)
+            if (Time.time > i)
             {
-                if (spawn.item == null)
+                foreach (ItemSpawnPoint spawn in spawnPoints)
                 {
-                    if (Time.time >i)
+                    if (spawn.item == null)
                     {
-                        i += itemSpawnSeconds;
+                   
                         ItemObject randItem = GetRandomItem();
                         randItem.setOwner(null);
                         spawn.item = randItem.gameObject;
                         SpawnAbility(randItem,spawn);
                     }
                 }
+                i += itemSpawnSeconds;
             }
         }
     }
@@ -47,8 +46,6 @@ public class AbilitySpawner : MonoBehaviour
 
     public void SpawnAbility(ItemObject respawnAbility, ItemSpawnPoint spawn)
     {
-        anim = spawn.GetComponent<Animator>();
-        anim.enabled = true;
-        anim.SetBool(respawnAbility.referenceItem.animationName,true);
+        spawn.ServerSetAnim(respawnAbility.referenceItem.animationName);
     }
 }
