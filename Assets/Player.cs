@@ -102,17 +102,4 @@ public class Player : NetworkBehaviour,IGetHealthSystem
         }
         return healthSystem;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ability")
-        {
-            NetworkConnection aOwner = collision.gameObject.GetComponent<ItemObject>().getOwner();
-            NetworkConnection pOwner = GetComponent<NetworkObject>().Owner;
-            if (aOwner.ClientId != pOwner.ClientId)
-            {
-                Debug.Log(aOwner.ClientId + " hit " + pOwner.ClientId);
-            }
-        }
-    }
 }

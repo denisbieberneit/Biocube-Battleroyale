@@ -1,9 +1,8 @@
-using FishNet.Object;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilitySpawner : NetworkBehaviour
+public class AbilitySpawner : MonoBehaviour
 {
     [SerializeField]
     private List<ItemSpawnPoint> spawnPoints;

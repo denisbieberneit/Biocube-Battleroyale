@@ -50968,7 +50968,6 @@ MonoBehaviour:
   - {fileID: 1646400486}
   - {fileID: 1761826310}
   - {fileID: 1822320575}
-  - {fileID: 1990719402}
   - {fileID: 2026150380}
 --- !u!1001 &84321474
 PrefabInstance:
@@ -52473,9 +52472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41a87c396b8d4e40b70f13b81a9533d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 8
+  _componentIndexCache: 0
   _addedNetworkObject: {fileID: 239690349}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 239690349}
   spawnPoint: {fileID: 0}
   occupied: 0
   item: {fileID: 0}
@@ -52587,7 +52586,7 @@ MonoBehaviour:
     Rotation: {x: -0, y: -0, z: -0, w: 1}
     LocalScale: {x: 1, y: 1, z: 1}
   _isNetworked: 1
-  _hasParentNetworkObjectAtEdit: 1
+  _hasParentNetworkObjectAtEdit: 0
   NetworkObserver: {fileID: 0}
   _prefabId: -1
   _scenePathHash: 394288251
@@ -52601,7 +52600,6 @@ MonoBehaviour:
   - {fileID: 1646400486}
   - {fileID: 1761826310}
   - {fileID: 1822320575}
-  - {fileID: 1990719402}
   - {fileID: 2026150380}
 --- !u!114 &239690350
 MonoBehaviour:
@@ -52615,9 +52613,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cac635f24954048aad3a6ff9110beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 9
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 239690349}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 239690349}
   IgnoredParameters: []
   _animator: {fileID: 239690348}
   _smoothFloats: 1
@@ -54453,7 +54451,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -57876,9 +57874,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41a87c396b8d4e40b70f13b81a9533d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 16
+  _componentIndexCache: 0
   _addedNetworkObject: {fileID: 770030077}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 770030077}
   spawnPoint: {fileID: 0}
   occupied: 0
   item: {fileID: 0}
@@ -57997,9 +57995,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cac635f24954048aad3a6ff9110beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 17
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 770030077}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 770030077}
   IgnoredParameters: []
   _animator: {fileID: 770030072}
   _smoothFloats: 1
@@ -58026,7 +58024,7 @@ MonoBehaviour:
     Rotation: {x: -0, y: -0, z: -0, w: 1}
     LocalScale: {x: 1, y: 1, z: 1}
   _isNetworked: 1
-  _hasParentNetworkObjectAtEdit: 1
+  _hasParentNetworkObjectAtEdit: 0
   NetworkObserver: {fileID: 0}
   _prefabId: -1
   _scenePathHash: 394288251
@@ -58040,7 +58038,6 @@ MonoBehaviour:
   - {fileID: 1646400486}
   - {fileID: 1761826310}
   - {fileID: 1822320575}
-  - {fileID: 1990719402}
   - {fileID: 2026150380}
 --- !u!1001 &772670912
 PrefabInstance:
@@ -59270,9 +59267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41a87c396b8d4e40b70f13b81a9533d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 4
+  _componentIndexCache: 0
   _addedNetworkObject: {fileID: 894761224}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 894761224}
   spawnPoint: {fileID: 0}
   occupied: 0
   item: {fileID: 0}
@@ -59376,9 +59373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cac635f24954048aad3a6ff9110beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 5
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 894761224}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 894761224}
   IgnoredParameters: []
   _animator: {fileID: 894761222}
   _smoothFloats: 1
@@ -59405,7 +59402,7 @@ MonoBehaviour:
     Rotation: {x: -0, y: -0, z: -0, w: 1}
     LocalScale: {x: 1, y: 1, z: 1}
   _isNetworked: 1
-  _hasParentNetworkObjectAtEdit: 1
+  _hasParentNetworkObjectAtEdit: 0
   NetworkObserver: {fileID: 0}
   _prefabId: -1
   _scenePathHash: 394288251
@@ -59419,7 +59416,6 @@ MonoBehaviour:
   - {fileID: 1646400486}
   - {fileID: 1761826310}
   - {fileID: 1822320575}
-  - {fileID: 1990719402}
   - {fileID: 2026150380}
 --- !u!1001 &895531394
 PrefabInstance:
@@ -62597,9 +62593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41a87c396b8d4e40b70f13b81a9533d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 6
+  _componentIndexCache: 0
   _addedNetworkObject: {fileID: 1201321677}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 1201321677}
   spawnPoint: {fileID: 0}
   occupied: 0
   item: {fileID: 0}
@@ -62703,9 +62699,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cac635f24954048aad3a6ff9110beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 7
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 1201321677}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 1201321677}
   IgnoredParameters: []
   _animator: {fileID: 1201321675}
   _smoothFloats: 1
@@ -62732,7 +62728,7 @@ MonoBehaviour:
     Rotation: {x: -0, y: -0, z: -0, w: 1}
     LocalScale: {x: 1, y: 1, z: 1}
   _isNetworked: 1
-  _hasParentNetworkObjectAtEdit: 1
+  _hasParentNetworkObjectAtEdit: 0
   NetworkObserver: {fileID: 0}
   _prefabId: -1
   _scenePathHash: 394288251
@@ -62746,7 +62742,6 @@ MonoBehaviour:
   - {fileID: 1646400486}
   - {fileID: 1761826310}
   - {fileID: 1822320575}
-  - {fileID: 1990719402}
   - {fileID: 2026150380}
 --- !u!4 &1201847354 stripped
 Transform:
@@ -66877,9 +66872,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41a87c396b8d4e40b70f13b81a9533d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 14
+  _componentIndexCache: 0
   _addedNetworkObject: {fileID: 1498330006}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 1498330006}
   spawnPoint: {fileID: 0}
   occupied: 0
   item: {fileID: 0}
@@ -66998,9 +66993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cac635f24954048aad3a6ff9110beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 15
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 1498330006}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 1498330006}
   IgnoredParameters: []
   _animator: {fileID: 1498330001}
   _smoothFloats: 1
@@ -67027,7 +67022,7 @@ MonoBehaviour:
     Rotation: {x: -0, y: -0, z: -0, w: 1}
     LocalScale: {x: 1, y: 1, z: 1}
   _isNetworked: 1
-  _hasParentNetworkObjectAtEdit: 1
+  _hasParentNetworkObjectAtEdit: 0
   NetworkObserver: {fileID: 0}
   _prefabId: -1
   _scenePathHash: 394288251
@@ -67041,7 +67036,6 @@ MonoBehaviour:
   - {fileID: 1646400486}
   - {fileID: 1761826310}
   - {fileID: 1822320575}
-  - {fileID: 1990719402}
   - {fileID: 2026150380}
 --- !u!1001 &1508354376
 PrefabInstance:
@@ -68174,9 +68168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41a87c396b8d4e40b70f13b81a9533d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 12
+  _componentIndexCache: 0
   _addedNetworkObject: {fileID: 1646400486}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 1646400486}
   spawnPoint: {fileID: 0}
   occupied: 0
   item: {fileID: 0}
@@ -68280,9 +68274,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cac635f24954048aad3a6ff9110beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 13
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 1646400486}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 1646400486}
   IgnoredParameters: []
   _animator: {fileID: 1646400484}
   _smoothFloats: 1
@@ -68309,7 +68303,7 @@ MonoBehaviour:
     Rotation: {x: -0, y: -0, z: -0, w: 1}
     LocalScale: {x: 1, y: 1, z: 1}
   _isNetworked: 1
-  _hasParentNetworkObjectAtEdit: 1
+  _hasParentNetworkObjectAtEdit: 0
   NetworkObserver: {fileID: 0}
   _prefabId: -1
   _scenePathHash: 394288251
@@ -68323,7 +68317,6 @@ MonoBehaviour:
   - {fileID: 1646400486}
   - {fileID: 1761826310}
   - {fileID: 1822320575}
-  - {fileID: 1990719402}
   - {fileID: 2026150380}
 --- !u!1001 &1655724667
 PrefabInstance:
@@ -69497,9 +69490,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41a87c396b8d4e40b70f13b81a9533d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 2
+  _componentIndexCache: 0
   _addedNetworkObject: {fileID: 1761826310}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 1761826310}
   spawnPoint: {fileID: 0}
   occupied: 0
   item: {fileID: 0}
@@ -69603,9 +69596,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cac635f24954048aad3a6ff9110beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 3
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 1761826310}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 1761826310}
   IgnoredParameters: []
   _animator: {fileID: 1761826308}
   _smoothFloats: 1
@@ -69632,7 +69625,7 @@ MonoBehaviour:
     Rotation: {x: -0, y: -0, z: -0, w: 1}
     LocalScale: {x: 1, y: 1, z: 1}
   _isNetworked: 1
-  _hasParentNetworkObjectAtEdit: 1
+  _hasParentNetworkObjectAtEdit: 0
   NetworkObserver: {fileID: 0}
   _prefabId: -1
   _scenePathHash: 394288251
@@ -69646,7 +69639,6 @@ MonoBehaviour:
   - {fileID: 1646400486}
   - {fileID: 1761826310}
   - {fileID: 1822320575}
-  - {fileID: 1990719402}
   - {fileID: 2026150380}
 --- !u!1001 &1763199844
 PrefabInstance:
@@ -69971,9 +69963,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41a87c396b8d4e40b70f13b81a9533d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 18
+  _componentIndexCache: 0
   _addedNetworkObject: {fileID: 1822320575}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 1822320575}
   spawnPoint: {fileID: 0}
   occupied: 0
   item: {fileID: 0}
@@ -70092,9 +70084,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cac635f24954048aad3a6ff9110beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 19
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 1822320575}
-  _networkObjectCache: {fileID: 1990719402}
+  _networkObjectCache: {fileID: 1822320575}
   IgnoredParameters: []
   _animator: {fileID: 1822320570}
   _smoothFloats: 1
@@ -70121,7 +70113,7 @@ MonoBehaviour:
     Rotation: {x: -0, y: -0, z: -0, w: 1}
     LocalScale: {x: 1, y: 1, z: 1}
   _isNetworked: 1
-  _hasParentNetworkObjectAtEdit: 1
+  _hasParentNetworkObjectAtEdit: 0
   NetworkObserver: {fileID: 0}
   _prefabId: -1
   _scenePathHash: 394288251
@@ -70135,7 +70127,6 @@ MonoBehaviour:
   - {fileID: 1646400486}
   - {fileID: 1761826310}
   - {fileID: 1822320575}
-  - {fileID: 1990719402}
   - {fileID: 2026150380}
 --- !u!1001 &1826704999
 PrefabInstance:
@@ -72057,8 +72048,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1990719400}
   - component: {fileID: 1990719401}
-  - component: {fileID: 1990719402}
-  - component: {fileID: 1990719403}
   m_Layer: 0
   m_Name: ItemSpawns
   m_TagString: Untagged
@@ -72102,9 +72091,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02829077d3756e64e8bece1f36e975bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 0
-  _addedNetworkObject: {fileID: 1990719402}
-  _networkObjectCache: {fileID: 1990719402}
   spawnPoints:
   - {fileID: 1761826305}
   - {fileID: 894761219}
@@ -72120,81 +72106,6 @@ MonoBehaviour:
   - {fileID: 2930427727501858023, guid: 70649d5b99e48b540b8718effbca227d, type: 3}
   - {fileID: 2930427727501858023, guid: 45b65c3651431004ca2f21ae7478edce, type: 3}
   itemSpawnSeconds: 10
---- !u!114 &1990719402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990719399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _networkBehaviours:
-  - {fileID: 1990719401}
-  - {fileID: 1990719403}
-  - {fileID: 1761826305}
-  - {fileID: 1761826309}
-  - {fileID: 894761219}
-  - {fileID: 894761223}
-  - {fileID: 1201321672}
-  - {fileID: 1201321676}
-  - {fileID: 239690345}
-  - {fileID: 239690350}
-  - {fileID: 2026150375}
-  - {fileID: 2026150379}
-  - {fileID: 1646400481}
-  - {fileID: 1646400485}
-  - {fileID: 1498330000}
-  - {fileID: 1498330005}
-  - {fileID: 770030071}
-  - {fileID: 770030076}
-  - {fileID: 1822320569}
-  - {fileID: 1822320574}
-  SceneTransformProperties:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: -0, y: -0, z: -0, w: 1}
-    LocalScale: {x: 1, y: 1, z: 1}
-  _isNetworked: 1
-  _hasParentNetworkObjectAtEdit: 0
-  NetworkObserver: {fileID: 0}
-  _prefabId: -1
-  _scenePathHash: 394288251
-  _sceneId: 1693455146931044231
-  _sceneNetworkObjects:
-  - {fileID: 239690349}
-  - {fileID: 770030077}
-  - {fileID: 894761224}
-  - {fileID: 1201321677}
-  - {fileID: 1498330006}
-  - {fileID: 1646400486}
-  - {fileID: 1761826310}
-  - {fileID: 1822320575}
-  - {fileID: 1990719402}
-  - {fileID: 2026150380}
---- !u!114 &1990719403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990719399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8cac635f24954048aad3a6ff9110beb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _componentIndexCache: 1
-  _addedNetworkObject: {fileID: 1990719402}
-  _networkObjectCache: {fileID: 1990719402}
-  IgnoredParameters: []
-  _animator: {fileID: 0}
-  _smoothFloats: 1
-  _synchronizeInterval: 0.1
-  _clientAuthoritative: 1
-  _sendToOwner: 0
 --- !u!1001 &1996121530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72712,7 +72623,6 @@ MonoBehaviour:
   - {fileID: 1646400486}
   - {fileID: 1761826310}
   - {fileID: 1822320575}
-  - {fileID: 1990719402}
   - {fileID: 2026150380}
 --- !u!1001 &2034837987
 PrefabInstance:
