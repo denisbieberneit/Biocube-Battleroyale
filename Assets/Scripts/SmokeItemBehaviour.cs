@@ -26,11 +26,25 @@ public class SmokeItemBehaviour : NetworkBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            int ownerId = GetComponent<NetworkObject>().OwnerId;
+            int objectId = collision.gameObject.GetComponent<NetworkObject>().OwnerId;
+            if (ownerId == objectId)
+            {
+                Debug.Log("Selfhit");
+                //selfhit
+                return;
+            }
             Debug.Log("Collided with " + collision.gameObject.tag);
-            rb.simulated = false;
-            anim.SetBool("CircleGas", true);
-            anim.SetBool("CircleGasExplosion", true);
-            rb.bodyType = RigidbodyType2D.Static;   
+            Explode();
         }
+    }
+
+
+    private void Explode()
+    {
+        rb.simulated = false;
+        anim.SetBool("CircleGas", true);
+        anim.SetBool("CircleGasExplosion", true);
+        rb.bodyType = RigidbodyType2D.Static;
     }
 }

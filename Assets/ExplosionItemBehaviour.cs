@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FishNet.Object;
+
 
 public class ExplosionItemBehaviour : MonoBehaviour
 {
@@ -26,11 +28,24 @@ public class ExplosionItemBehaviour : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Collided with " + collision.gameObject.tag);
-            rb.simulated = false;
-            anim.SetBool("CircleExplosion", true);
-            anim.SetBool("CircleExplosionExplosion", true);
-            rb.bodyType = RigidbodyType2D.Static;
+            int ownerId = GetComponent<NetworkObject>().OwnerId;
+            int objectId = collision.gameObject.GetComponent<NetworkObject>().OwnerId;
+            if (ownerId == objectId)
+            {
+                Debug.Log("Selfhit");
+                //selfhit
+                return;
+            }
+            Explode();
             collision.gameObject.GetComponent<Player>().TakeDamage(3f);
         }
+    }
+
+    private void Explode()
+    {
+        rb.simulated = false;
+        anim.SetBool("CircleExplosion", true);
+        anim.SetBool("CircleExplosionExplosion", true);
+        rb.bodyType = RigidbodyType2D.Static;
     }
 }

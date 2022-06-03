@@ -26,12 +26,26 @@ public class StunItemBehaviour : NetworkBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Collided with " + collision.gameObject.tag);
-            rb.simulated = false;
-            anim.SetBool("CircleStun", true);
-            anim.SetBool("CircleStunExplosion", true);
-            rb.bodyType = RigidbodyType2D.Static;
+            int ownerId = GetComponent<NetworkObject>().OwnerId;
+            int objectId = collision.gameObject.GetComponent<NetworkObject>().OwnerId;
+            if (ownerId == objectId)
+            {
+                //siehst du was ich schreibe?
+                Debug.Log("Selfhit");
+                //selfhit
+                return;
+            }
+            Explode();
             collision.gameObject.GetComponent<Player>().StunPlayer();
         }
+    }
+
+
+    private void Explode()
+    {
+        rb.simulated = false;
+        anim.SetBool("CircleStun", true);
+        anim.SetBool("CircleStunExplosion", true);
+        rb.bodyType = RigidbodyType2D.Static;
     }
 }
